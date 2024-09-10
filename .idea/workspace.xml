@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1080fcc2-f862-44de-8eaa-9bae50b93dc8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hospital.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hospital/Service/bdDoctores.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hospital/model/DoctorGeneral.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hospital/model/Secretaria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hospital/view/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PersonalAdministrativo/Secretaria.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/personalMedico/DoctorGeneral.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/personalMedico/Enfermera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hospital/model/Enfermera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/salas/SalaCirugias.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/salas/SalaDeUrgencias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hospital/model/SalaDeUrgencias.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/salas/SalaHospitalizacionGeneral.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/salas/SalaMaternidad.java" beforeDir="false" />
-    </list>
+    <list default="true" id="1080fcc2-f862-44de-8eaa-9bae50b93dc8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,6 +42,11 @@
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Resources" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
