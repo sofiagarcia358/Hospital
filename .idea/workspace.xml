@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1080fcc2-f862-44de-8eaa-9bae50b93dc8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hospital.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hospital/Service/bdDoctores.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hospital/model/DoctorGeneral.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hospital/model/Secretaria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hospital/view/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PersonalAdministrativo/Secretaria.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/personalMedico/DoctorGeneral.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/personalMedico/Enfermera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hospital/model/Enfermera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/salas/SalaCirugias.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/salas/SalaDeUrgencias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hospital/model/SalaDeUrgencias.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/salas/SalaHospitalizacionGeneral.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/salas/SalaMaternidad.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2lHzf25Mi2SoXiYg6lXDphzvvXh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Login.executor": "Run",
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "modelo-mvc",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/sofia/IdeaProjects/Hospital/src/Resources",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1080fcc2-f862-44de-8eaa-9bae50b93dc8" name="Changes" comment="" />
+      <created>1724851892976</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1724851892976</updated>
+    </task>
+    <servers />
+  </component>
+</project>
