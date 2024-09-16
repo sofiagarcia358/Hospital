@@ -1,67 +1,60 @@
 package hospital.view;
-
 import javax.swing.*;
 import java.awt.*;
 
+
 public class Login extends JFrame {
 
+    // Componentes de la interfaz
+    private JTextField textFieldUsuario;
+    private JPasswordField passwordFieldContraseña;
+    private JButton botonIniciarSesion;
+
+    // Constructor
     public Login() {
-        JFrame miVentana = new JFrame("hospital.view.Login");
-        miVentana.setSize(1000, 1000);
-        miVentana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // Configuración de la ventana
+        setTitle("Login");
+        setSize(900, 1800);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null); // Centrar la ventana en la pantalla
+        setLayout(new GridBagLayout()); // Usamos GridBagLayout para centrar los elementos
 
-        JPanel mainPanel = new JPanel(new GridLayout(1, 2));
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(10, 10, 10, 10); // Margen entre los componentes
+        gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        JPanel panel1 = new JPanel();
-        panel1.setBackground(Color.gray);
+        // Creación de los componentes
+        JLabel etiquetaUsuario = new JLabel("Usuario:");
+        textFieldUsuario = new JTextField(15);
 
-        JPanel panel2 = new JPanel();
-        panel2.setLayout(new GridBagLayout());
+        JLabel etiquetaContraseña = new JLabel("Contraseña:");
+        passwordFieldContraseña = new JPasswordField(15);
 
-        JPanel cuadros = new JPanel();
-        cuadros.setLayout(new GridLayout(2, 2, 10, 10));
+        botonIniciarSesion = new JButton("Iniciar sesión");
 
-        JLabel nameLabel = new JLabel("Name:");
-        nameLabel.setForeground(Color.BLACK);
-        JTextField nameField = new JTextField(15);
+        // Posicionamiento de los componentes
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        add(etiquetaUsuario, gbc);
 
-        JLabel passwordLabel = new JLabel("Password:");
-        passwordLabel.setForeground(Color.black);
-        JPasswordField passwordField = new JPasswordField(15);
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        add(textFieldUsuario, gbc);
 
-        JButton loginboton = new JButton("hospital.view.Login");
-        //restricciones.
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        add(etiquetaContraseña, gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        add(passwordFieldContraseña, gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = 2;
+        add(botonIniciarSesion, gbc);
 
 
-
-           // ArrayList<DoctorGeneral> dataDoctores = bdDoctores.listaDoctores();
-
-
-        cuadros.add(nameLabel);
-        cuadros.add(nameField);
-        cuadros.add(passwordLabel);
-        cuadros.add(passwordField);
-
-        GridBagConstraints grid = new GridBagConstraints();
-        grid.gridx = 0;
-        grid.gridy = 0;
-        grid.anchor = GridBagConstraints.CENTER;
-        panel2.add(cuadros, grid);
-
-        mainPanel.add(panel1);
-        mainPanel.add(panel2);
-
-        miVentana.add(mainPanel);
-        miVentana.setVisible(true);
+        // Hacemos visible la ventana
+        setVisible(true);
     }
-
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new Login();
-            }
-        });
     }
-}
