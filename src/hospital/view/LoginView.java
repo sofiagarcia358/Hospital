@@ -1,9 +1,16 @@
 package hospital.view;
+import hospital.Service.bdDoctores;
+import hospital.model.DoctorGeneral;
+import org.w3c.dom.events.EventListener;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
+import javax.swing.border.MatteBorder;
+import java.util.ArrayList;
 
 
-public class Login extends JFrame {
+public class LoginView extends JFrame {
 
     // Componentes de la interfaz
     private JTextField textFieldUsuario;
@@ -11,7 +18,7 @@ public class Login extends JFrame {
     private JButton botonIniciarSesion;
 
     // Constructor
-    public Login() {
+    public LoginView() {
         // Configuración de la ventana
         setTitle("Login");
         setSize(900, 1800);
@@ -57,4 +64,16 @@ public class Login extends JFrame {
         // Hacemos visible la ventana
         setVisible(true);
     }
+    public String getCorreo() {
+        return textFieldUsuario.getText();
     }
+
+    public String getContrasena() {
+        return passwordFieldContraseña.getText();
+    }
+
+    public void addActionListener(ActionListener listener) {
+        botonIniciarSesion.addActionListener(listener);
+    }
+}
+
