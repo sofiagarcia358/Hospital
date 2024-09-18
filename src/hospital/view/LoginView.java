@@ -64,6 +64,9 @@ public class LoginView extends JFrame {
         // Hacemos visible la ventana
         setVisible(true);
     }
+
+
+
     public String getCorreo() {
         return textFieldUsuario.getText();
     }
