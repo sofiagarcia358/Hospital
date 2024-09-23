@@ -21,6 +21,21 @@ public class DoctorGeneral {
         this.nombre = nombre;
     }
 
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public void setEspecialidad(String especialidad) {
+        Especialidad = especialidad;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
     //getters
 
     public String getNombre() {
