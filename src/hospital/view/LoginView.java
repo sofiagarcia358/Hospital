@@ -1,7 +1,4 @@
 package hospital.view;
-import hospital.Service.bdDoctores;
-import hospital.model.DoctorGeneral;
-import org.w3c.dom.events.EventListener;
 
 import javax.swing.*;
 import java.awt.*;
@@ -64,12 +61,15 @@ public class LoginView extends JFrame {
         // Hacemos visible la ventana
         setVisible(true);
     }
-    public String getCorreo() {
-        return textFieldUsuario.getText();
+
+
+
+    public String getUsuario() {
+        return textFieldUsuario.getText().trim();
     }
 
     public String getContrasena() {
-        return passwordFieldContraseña.getText();
+        return new String(passwordFieldContraseña.getText()).trim();
     }
 
     public void addActionListener(ActionListener listener) {
