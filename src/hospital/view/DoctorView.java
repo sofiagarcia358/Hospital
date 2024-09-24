@@ -59,7 +59,7 @@ public class DoctorView  extends JFrame {
         doctorPanel.add(infoDoctorPanel); // Añadir al doctorPanel
 
         // Añadir el nombre del doctor
-        JLabel nombreDoctor = new JLabel("Luis Reyes");
+        JLabel nombreDoctor = new JLabel(String.valueOf(datosDoctor.get("Nombre")));;
         nombreDoctor.setForeground(Color.WHITE); // Letras blancas
         nombreDoctor.setFont(new Font("Arial", Font.BOLD, 16)); // Fuente y tamaño de letra
         nombreDoctor.setAlignmentX(Component.RIGHT_ALIGNMENT); // Alinear a la derecha
