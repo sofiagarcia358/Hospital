@@ -2,16 +2,19 @@ package hospital.view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.HashMap;
+
 
 public class DoctorView  extends JFrame {
+
 
     // Atributo de tipo Array que almacena las dimensiones de la pantalla
     private int[] pantally = {1300, 800}; // Resolución de la ventana (1300 x 800)
 
     // Constructor
-    public DoctorView() {
+    public DoctorView(HashMap<String, String> doctorData) {
         // Configurar la ventana con las dimensiones del array
-        setTitle("Ventana del Hospital");
+        setTitle("Perfil del Doctor");
         setSize(pantally[0], pantally[1]); // Usar las dimensiones del array
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout()); // Administrador de diseño BorderLayout
@@ -72,7 +75,17 @@ public class DoctorView  extends JFrame {
         // Hacer visible la ventana
         setVisible(true);
     }
+
+    public static void main(String[] args) {
+        HashMap<String, String> dummyData = new HashMap<>();
+        dummyData.put("nombre", "Sofía García");
+        dummyData.put("especialidad", "Doctora General");
+
+        new DoctorView(dummyData);
+
+    }
 }
+
 
 
 

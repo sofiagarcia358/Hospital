@@ -7,10 +7,7 @@ import backEnde.BackEnde;
 public class Main {
     public static void main(String[] args) {
         LoginView loginView =new LoginView();
-
-        bdDoctores dataDoctores = new bdDoctores();
-
-        BackEnde backEnde = new BackEnde(dataDoctores);
+        BackEnde backEnde = new BackEnde();
 
         new loginController(loginView, backEnde);
 
