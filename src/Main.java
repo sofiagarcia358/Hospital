@@ -24,7 +24,7 @@ public class Main {
                 //Fisioterapeutas
                 //Farmacéuticos
                 //Paramedicos
-                //Pediatras
+                //Pediatrasgit
                 //Camilleros
 
                 //Sala de espera
