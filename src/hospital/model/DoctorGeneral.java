@@ -16,32 +16,13 @@ public class DoctorGeneral {
             this.contrasena = contrasena;
         }
 
-        //setters
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
-    public void setEspecialidad(String especialidad) {
-        Especialidad = especialidad;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
-    }
     //getters
 
     public String getNombre() {
         return this.nombre;
     }
-    public String getCorreo(){return this.correo;}
+    public String getCorreo(){return this.correo;
+         }
     public String getEspecialidad() {
         return this.Especialidad;
     }
