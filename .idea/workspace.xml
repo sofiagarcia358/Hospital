@@ -7,7 +7,12 @@
     <list default="true" id="1080fcc2-f862-44de-8eaa-9bae50b93dc8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backEnde/BackEnde.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backEnde/BackEnde.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hospital/Service/bdDoctores.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hospital/controller/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hospital/controller/loginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hospital/model/DoctorGeneral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hospital/model/DoctorGeneral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hospital/view/DoctorView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hospital/view/DoctorView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hospital/view/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hospital/view/LoginView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +30,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
-    &quot;associatedIndex&quot;: 4
-    }</component>
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2lHzf25Mi2SoXiYg6lXDphzvvXh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -35,16 +40,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.DoctorView.executor": "Run",
     "Application.Login.executor": "Run",
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "menu-lateral",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/sofia/IdeaProjects/Hospital/src/Resources",
+    "last_opened_file_path": "/home/sofia/IdeaProjects/Hospital/src/hospital/Service/bdDoctores.java",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.0",
+    "two.files.diff.last.used.file": "/home/sofia/IdeaProjects/Hospital/src/hospital/Service/bdDoctores.java"
   }
 }]]></component>
   <component name="RecentsManager">
