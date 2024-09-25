@@ -1,43 +1,35 @@
 package hospital.controller;
 
-import hospital.model.DoctorGeneral;
-import hospital.view.LoginView;
-import hospital.view.DoctorView;
 import backEnde.BackEnde;
+import hospital.view.DoctorView;
+import hospital.view.LoginView;
+
 import java.util.HashMap;
 
 public class loginController {
-    private BackEnde backEnde;
+
     private LoginView loginView;
+    private BackEnde backEnde;
 
+    public loginController(LoginView loginView, BackEnde backEnde) {
+        this.loginView = loginView;
+        this.backEnde = backEnde;
+        this.loginView.addLoginListener(e -> iniciarSesion());
+    }
 
-        public loginController(LoginView loginView, BackEnde backEnde) {
-            this.loginView = loginView;
-            this.backEnde = backEnde;
-            this.loginView.addActionListener(e -> iniciarSesion());
-        }
     private void iniciarSesion() {
         String usuario = loginView.getUsuario();
-        String password = loginView.getContrasena();
+        String password = loginView.getPassword();
 
-        DoctorGeneral doctor = backEnde.login(usuario, password);
+        HashMap<String, String> result = backEnde.validarDatos(usuario, password);
 
-        if (doctor != null) {
-            HashMap<String, String> doctorData = new HashMap<>();
-            doctorData.put("nombre", doctor.getNombre());
-            doctorData.put("especialidad", doctor.getEspecialidad());
-
-            DoctorView doctorView = new DoctorView(doctorData);
+        if (result.containsKey("Error")) {
+            System.out.println("Error: " + result.get("Error"));
         } else {
-            System.out.println("Error: Usuario o contraseña incorrectos");
+            System.out.println("Login exitoso:");
+            System.out.println("Nombre: " + result.get("Nombre"));
+            System.out.println("Correo: " + result.get("Correo"));
+            System.out.println("Especialidad: " + result.get("Especialidad"));
         }
-
-            }
-        }
-
-
-
-
-
-
-
+    }
+}
