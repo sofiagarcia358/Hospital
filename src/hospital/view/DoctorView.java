@@ -1,6 +1,7 @@
 package hospital.view;
 
 import backEnde.BackEnde;
+import hospital.Service.DataPaciente;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -9,6 +10,8 @@ import java.util.HashMap;
 
 public class DoctorView extends JFrame {
     private int[] pantalla = {1300, 800};
+
+
 
     public DoctorView(HashMap<String, String> doctorData) {
 
@@ -106,6 +109,4 @@ public class DoctorView extends JFrame {
 
         return boton;
     }
-
-
-    }
+}
