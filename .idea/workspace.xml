@@ -43,7 +43,7 @@
     "Application.Login.executor": "Run",
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "menu-lateral",
+    "git-widget-placeholder": "pacientesView",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/sofia/IdeaProjects/Hospital/src/hospital/Service/bdDoctores.java",
     "project.structure.last.edited": "Project",
