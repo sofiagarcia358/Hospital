@@ -1,79 +1,86 @@
 package hospital.view;
 
 import javax.swing.*;
+import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import javax.swing.border.MatteBorder;
-import java.util.ArrayList;
-
 
 public class LoginView extends JFrame {
 
-    // Componentes de la interfaz
-    private JTextField textFieldUsuario;
-    private JPasswordField passwordFieldContraseña;
-    private JButton botonIniciarSesion;
+    private JTextField userField;
+    private JPasswordField passwordField;
+    private JButton loginButton;
 
-    // Constructor
     public LoginView() {
-        // Configuración de la ventana
-        setTitle("Login");
-        setSize(900, 1800);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null); // Centrar la ventana en la pantalla
-        setLayout(new GridBagLayout()); // Usamos GridBagLayout para centrar los elementos
 
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(10, 10, 10, 10); // Margen entre los componentes
-        gbc.fill = GridBagConstraints.HORIZONTAL;
+        // VENTANA LOGIN
+        this.setTitle("Login");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setSize(500, 600);
+        this.setLocationRelativeTo(null);
 
-        // Creación de los componentes
-        JLabel etiquetaUsuario = new JLabel("Usuario:");
-        textFieldUsuario = new JTextField(15);
+        // |-- [ PANEL LOGIN ]
+        JPanel loginPanel = new JPanel();
+        loginPanel.setLayout(new GridBagLayout());
+        loginPanel.setBackground(Color.WHITE);
 
-        JLabel etiquetaContraseña = new JLabel("Contraseña:");
-        passwordFieldContraseña = new JPasswordField(15);
+        // |---[ resGb = Restricciones de diseño generales ]
+        GridBagConstraints resGb = new GridBagConstraints();
+        resGb.insets = new Insets(15, 15, 15, 15);
+        resGb.fill = GridBagConstraints.HORIZONTAL;
+        Font myFont = new Font("Arial", Font.PLAIN, 18);
 
-        botonIniciarSesion = new JButton("Iniciar sesión");
+        // |--- [ Componentes del panel ]
+        JLabel userLabel = new JLabel("Usuario:");
+        userLabel.setFont(myFont);
+        userLabel.setForeground(Color.GRAY);
+        resGb.gridx = 0;
+        resGb.gridy = 0;
+        loginPanel.add(userLabel, resGb);
 
-        // Posicionamiento de los componentes
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        add(etiquetaUsuario, gbc);
+        userField = new JTextField();
+        userField.setPreferredSize(new Dimension(250, 40));
+        userField.setFont(myFont);
+        userField.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
+        resGb.gridx = 1;
+        resGb.gridy = 0;
+        loginPanel.add(userField, resGb);
 
-        gbc.gridx = 1;
-        gbc.gridy = 0;
-        add(textFieldUsuario, gbc);
+        JLabel passwordLabel = new JLabel("Contraseña:");
+        passwordLabel.setFont(myFont);
+        passwordLabel.setForeground(Color.GRAY);
+        resGb.gridx = 0;
+        resGb.gridy = 1;
+        loginPanel.add(passwordLabel, resGb);
 
-        gbc.gridx = 0;
-        gbc.gridy = 1;
-        add(etiquetaContraseña, gbc);
+        passwordField = new JPasswordField();
+        passwordField.setFont(myFont);
+        passwordField.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
+        resGb.gridx = 1;
+        resGb.gridy = 1;
+        loginPanel.add(passwordField, resGb);
 
-        gbc.gridx = 1;
-        gbc.gridy = 1;
-        add(passwordFieldContraseña, gbc);
+        loginButton = new JButton("Iniciar sesión");
+        loginButton.setFont(myFont);
+        loginButton.setBackground(Color.LIGHT_GRAY);
+        loginButton.setForeground(Color.WHITE);
+        resGb.gridx = 1;
+        resGb.gridy = 2;
+        loginPanel.add(loginButton, resGb);
 
-        gbc.gridx = 1;
-        gbc.gridy = 2;
-        add(botonIniciarSesion, gbc);
-
-
-        // Hacemos visible la ventana
-        setVisible(true);
+        this.add(loginPanel, BorderLayout.CENTER);
+        this.setVisible(true);
     }
-
-
 
     public String getUsuario() {
-        return textFieldUsuario.getText().trim();
+        return userField.getText();
     }
 
-    public String getContrasena() {
-        return new String(passwordFieldContraseña.getText()).trim();
+    public String getPassword() {
+        return new String(passwordField.getPassword());
     }
 
-    public void addActionListener(ActionListener listener) {
-        botonIniciarSesion.addActionListener(listener);
+    public void addLoginListener(ActionListener listener) {
+        loginButton.addActionListener(listener);
     }
 }
-

@@ -1,91 +1,117 @@
 package hospital.view;
 
+import backEnde.BackEnde;
+
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.util.HashMap;
 
+public class DoctorView extends JFrame {
+    private int[] pantalla = {1300, 800};
 
-public class DoctorView  extends JFrame {
-
-
-    // Atributo de tipo Array que almacena las dimensiones de la pantalla
-    private int[] pantally = {1300, 800}; // Resolución de la ventana (1300 x 800)
-
-    // Constructor
     public DoctorView(HashMap<String, String> doctorData) {
-        // Configurar la ventana con las dimensiones del array
-        setTitle("Perfil del Doctor");
-        setSize(pantally[0], pantally[1]); // Usar las dimensiones del array
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new BorderLayout()); // Administrador de diseño BorderLayout
-        setLocationRelativeTo(null); // Centrar la ventana en la pantalla
 
-        // Crear el panel de encabezado (headerPanel)
-        JPanel headerPanel = new JPanel();
-        headerPanel.setPreferredSize(new Dimension(1300, 60)); // Establecer tamaño 1300x60
-        headerPanel.setBackground(Color.DARK_GRAY); // Color de fondo darkGray
-        headerPanel.setLayout(new BorderLayout()); // Administrador de diseño BorderLayout
-        add(headerPanel, BorderLayout.NORTH); // Añadir el panel al norte del JFrame
+        this.setSize(pantalla[0], pantalla[1]);
+        this.setLayout(new BorderLayout());
+        this.setTitle("Perfil del doctor");
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
 
-        // Panel para el nombre del hospital
-        JPanel hospitalPanel = new JPanel();
-        hospitalPanel.setBackground(Color.DARK_GRAY); // Fondo oscuro como en la imagen
-        hospitalPanel.setLayout(new FlowLayout(FlowLayout.LEFT)); // Alinear a la izquierda
-        headerPanel.add(hospitalPanel, BorderLayout.WEST); // Colocar en el lado izquierdo
+        JPanel headerPanel = new JPanel(new BorderLayout());
+        headerPanel.setPreferredSize(new Dimension(1300, 60));
+        headerPanel.setBackground(Color.darkGray);
 
-        // Crear JLabel para el nombre del hospital
-        JLabel nombreHospital = new JLabel("Hospital Santa Catalina:");
-        nombreHospital.setForeground(Color.WHITE); // Letras blancas
-        nombreHospital.setFont(new Font("Arial", Font.BOLD, 20)); // Fuente y tamaño de letra
-        hospitalPanel.add(nombreHospital); // Añadir al hospitalPanel
+        JLabel nombreHospital = new JLabel("Hospital Santa Catalina");
+        nombreHospital.setForeground(Color.white);
+        nombreHospital.setFont(new Font("Arial", Font.BOLD, 16));
+        nombreHospital.setBorder(new EmptyBorder(0, 30, 0, 0)); // establece un margen
 
-        // Panel para la información del doctor y el logo
-        JPanel doctorPanel = new JPanel();
-        doctorPanel.setBackground(Color.DARK_GRAY); // Fondo oscuro
-        doctorPanel.setLayout(new FlowLayout(FlowLayout.RIGHT)); // Alinear a la derecha
-        headerPanel.add(doctorPanel, BorderLayout.EAST); // Añadir al lado derecho
+        JPanel userPanel = new JPanel(new GridBagLayout());
+        userPanel.setPreferredSize(new Dimension(270, 60));
+        userPanel.setBackground(Color.darkGray);
 
-        // Añadir el logo (simulado con un JLabel)
-        JLabel logoLabel = new JLabel();
-        logoLabel.setOpaque(true);
-        logoLabel.setBackground(Color.green); // Fondo amarillo para simular un logo
-        logoLabel.setPreferredSize(new Dimension(40, 40)); // Tamaño del logo
-        doctorPanel.add(logoLabel); // Añadir el logo al panel doctorPanel
 
-        // Panel para contener el nombre y la especialidad del doctor en vertical
-        JPanel infoDoctorPanel = new JPanel();
-        infoDoctorPanel.setBackground(Color.DARK_GRAY);
-        infoDoctorPanel.setLayout(new BoxLayout(infoDoctorPanel, BoxLayout.Y_AXIS)); // Alinear verticalmente
-        doctorPanel.add(infoDoctorPanel); // Añadir al doctorPanel
+        JPanel representacionLogo = new JPanel();
+        representacionLogo.setPreferredSize(new Dimension(40, 40));
+        representacionLogo.setBackground(Color.orange);
 
-        // Añadir el nombre del doctor
-        JLabel nombreDoctor = new JLabel(String.valueOf(datosDoctor.get("Nombre")));;
-        nombreDoctor.setForeground(Color.WHITE); // Letras blancas
-        nombreDoctor.setFont(new Font("Arial", Font.BOLD, 16)); // Fuente y tamaño de letra
-        nombreDoctor.setAlignmentX(Component.RIGHT_ALIGNMENT); // Alinear a la derecha
-        infoDoctorPanel.add(nombreDoctor); // Añadir al infoDoctorPanel
+        GridBagConstraints restricciones = new GridBagConstraints();
+        restricciones.gridx = 0;
+        restricciones.gridy = 0;
+        restricciones.gridheight = 2;
+        restricciones.insets = new Insets(0, 14, 0, 0);
 
-        // Añadir la especialidad del doctor
-        JLabel especialidadDoctor = new JLabel("Doctor General");
-        especialidadDoctor.setForeground(Color.LIGHT_GRAY); // Letras en gris claro
-        especialidadDoctor.setFont(new Font("Arial", Font.PLAIN, 14)); // Fuente y tamaño de letra
-        especialidadDoctor.setAlignmentX(Component.RIGHT_ALIGNMENT); // Alinear a la derecha
-        infoDoctorPanel.add(especialidadDoctor); // Añadir la especialidad al infoDoctorPanel
+        userPanel.add(representacionLogo, restricciones);
 
-        // Hacer visible la ventana
-        setVisible(true);
+
+        JLabel nombreDoc = new JLabel(String.valueOf(doctorData.get("Nombre")));
+        nombreDoc.setFont(new Font("Arial", Font.BOLD, 15));
+        nombreDoc.setForeground(Color.white);
+
+        restricciones.gridx = 1;
+        restricciones.gridy = 0;
+        restricciones.gridheight = 1;
+
+        userPanel.add(nombreDoc, restricciones);
+
+        JLabel especialidadDoc = new JLabel(String.valueOf(doctorData.get("Especialidad")));
+        especialidadDoc.setFont(new Font("Arial", Font.PLAIN, 13));
+        especialidadDoc.setForeground(Color.white);
+
+        restricciones.gridx = 1;
+        restricciones.gridy = 1;
+        restricciones.gridheight = 2;
+        restricciones.anchor = GridBagConstraints.WEST;
+
+        userPanel.add(especialidadDoc, restricciones);
+
+        headerPanel.add(userPanel, BorderLayout.EAST);
+        headerPanel.add(nombreHospital, BorderLayout.WEST);
+        this.add(headerPanel, BorderLayout.NORTH);
+        this.add(componenteMenuLateral(), BorderLayout.WEST);
+        this.setVisible(true);
+
+    }
+
+    private JPanel componenteMenuLateral() {
+
+        JPanel panelMenu = new JPanel();
+        panelMenu.setPreferredSize(new Dimension(250, pantalla[1]));
+        panelMenu.setBackground(Color.darkGray);
+
+        JPanel menu = new JPanel(new GridBagLayout());
+
+        GridBagConstraints restricciones = new GridBagConstraints();
+        restricciones.fill = GridBagConstraints.HORIZONTAL;
+        restricciones.gridx = 0;
+
+
+        menu.add(crearBoton("Opción 1"), restricciones);
+        menu.add(crearBoton("Opción 2"), restricciones);
+        menu.add(crearBoton("Opción 3"), restricciones);
+        menu.add(crearBoton("Opción 4"), restricciones);
+        menu.add(crearBoton("Opción 5"), restricciones);
+
+        panelMenu.add(menu);
+        return panelMenu;
+    }
+
+    private JButton crearBoton(String texto) {
+        JButton boton = new JButton(texto);
+
+        boton.addActionListener(e -> {
+            System.out.println(texto);
+        });
+
+        return boton;
     }
 
     public static void main(String[] args) {
+        // Prueba con datos simulados
         HashMap<String, String> dummyData = new HashMap<>();
-        dummyData.put("nombre", "Sofía García");
-        dummyData.put("especialidad", "Doctora General");
-
+        dummyData.put("Nombre", "Dr. Luis reyes");
+        dummyData.put("Especialidad", "Cirujano");
         new DoctorView(dummyData);
-
     }
 }
-
-
-
-
