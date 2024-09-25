@@ -107,11 +107,5 @@ public class DoctorView extends JFrame {
         return boton;
     }
 
-    public static void main(String[] args) {
-        // Prueba con datos simulados
-        HashMap<String, String> dummyData = new HashMap<>();
-        dummyData.put("Nombre", "Dr. Luis reyes");
-        dummyData.put("Especialidad", "Cirujano");
-        new DoctorView(dummyData);
+
     }
-}
