@@ -1,7 +1,6 @@
 package hospital.view;
 
 import javax.swing.*;
-import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
 

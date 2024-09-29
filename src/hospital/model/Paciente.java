@@ -1,6 +1,7 @@
 package hospital.model;
 
-public class paciente {
+
+public class Paciente {
     private String nombre;
     private String correo;
     private String telefono;
@@ -8,10 +9,10 @@ public class paciente {
     private String fechaNacimiento;
     private String horarioCita;
     private String motivoVisita;
-    private String numeroConsultas;
+    private int numeroConsultas;
     private String doctor;
 
-    public paciente(String nombre, String correo, String telefono, String direccion, String fechaNacimiento, String horarioCita, String motivoVisita, String numeroConsultas, String doctor) {
+    public Paciente(String nombre, String correo, String telefono, String direccion, String fechaNacimiento, String horarioCita, String motivoVisita, int numeroConsultas, String doctor) {
         this.nombre = nombre;
         this.correo = correo;
         this.telefono = telefono;
@@ -79,11 +80,11 @@ public class paciente {
         this.motivoVisita = motivoVisita;
     }
 
-    public String getNumeroConsultas() {
+    public int getNumeroConsultas() {
         return numeroConsultas;
     }
 
-    public void setNumeroConsultas(String numeroConsultas) {
+    public void setNumeroConsultas(int numeroConsultas) {
         this.numeroConsultas = numeroConsultas;
     }
 
@@ -97,7 +98,7 @@ public class paciente {
 
     @Override
     public String toString() {
-        return "Pacientes{" +
+        return "Paciente{" +
                 "nombre='" + nombre + '\'' +
                 ", correo='" + correo + '\'' +
                 ", telefono='" + telefono + '\'' +
