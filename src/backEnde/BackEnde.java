@@ -1,43 +1,40 @@
 package backEnde;
 
-import hospital.model.DoctorGeneral;
 import hospital.Service.bdDoctores;
+import hospital.model.DoctorGeneral;
+import hospital.view.DoctorView;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class BackEnde {
+    public static HashMap<String, String> validarDatos(String user, String password) {
 
-    public HashMap<String, String> validarDatos(String usuario, String contraseña) {
-        HashMap<String, String> response = new HashMap<>();
+        ArrayList<DoctorGeneral> doctores = bdDoctores.listaDoctores();
 
-        // Validación básica
-        if (usuario == null || usuario.isEmpty()) {
-            response.put("Error", "El usuario no puede estar vacío");
-            return response;
+        for (DoctorGeneral infDoc : doctores) {
+
+            if (infDoc.getCorreo().equalsIgnoreCase(user) || infDoc.getUser().equalsIgnoreCase(user)) {
+                if (infDoc.getContrasenna().equalsIgnoreCase(password)) {
+
+                    HashMap<String, String> datosDoctor = new HashMap<>();
+                    datosDoctor.put("nombre doctor", infDoc.getNombre());
+                    datosDoctor.put("especialidad", infDoc.getCargo());
+                    datosDoctor.put("password", infDoc.getContrasenna());
+                    datosDoctor.put("email", infDoc.getCorreo());
+                    datosDoctor.put("usuario", infDoc.getUser());
+
+                    System.out.println(datosDoctor.entrySet());
+                    return datosDoctor;
+                }
+            }
         }
 
-        if (contraseña == null || contraseña.isEmpty()) {
-            response.put("Error", "La contraseña no puede estar vacía");
-            return response;
-        }
+        HashMap<String, String> datosDoctor = new HashMap<>();
+        datosDoctor.put("Error", "¡¡ERROR!! Verifique usuario o contraseña");
+        System.out.println(datosDoctor.get("Error"));
 
-        if (contraseña.length() < 6) {
-            response.put("Error", "La contraseña debe tener al menos 6 caracteres");
-            return response;
-        }
-
-        // Validación de autenticación en el backend
-        bdDoctores dataDoctor = new bdDoctores();
-        DoctorGeneral doctor = dataDoctor.getDoctorByUsuario(usuario);
-
-        if (doctor != null && doctor.getContraseña().equals(contraseña)) {
-            response.put("Nombre", doctor.getNombre());
-            response.put("Correo", doctor.getCorreo());
-            response.put("Especialidad", doctor.getEspecialidad());
-        } else {
-            response.put("Error", "Credenciales incorrectas");
-        }
-
-        return response;
+        return datosDoctor;
     }
 }

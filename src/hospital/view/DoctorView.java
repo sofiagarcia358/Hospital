@@ -1,16 +1,22 @@
 package hospital.view;
 
+import hospital.model.Paciente;
 import backEnde.BackEnde;
+import hospital.Service.DataPacientes;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class DoctorView extends JFrame {
     private int[] pantalla = {1300, 800};
+    private ArrayList<Paciente> pacienteList = DataPacientes.listaPacientes();
+    private HashMap<String, String> datosDoctor;
 
-    public DoctorView(HashMap<String, String> doctorData) {
+    public DoctorView(HashMap datosDoctor){
+        this.datosDoctor = datosDoctor;
 
         this.setSize(pantalla[0], pantalla[1]);
         this.setLayout(new BorderLayout());
@@ -45,7 +51,7 @@ public class DoctorView extends JFrame {
         userPanel.add(representacionLogo, restricciones);
 
 
-        JLabel nombreDoc = new JLabel(String.valueOf(doctorData.get("Nombre")));
+        JLabel nombreDoc = new JLabel(String.valueOf(datosDoctor.get("Nombre")));
         nombreDoc.setFont(new Font("Arial", Font.BOLD, 15));
         nombreDoc.setForeground(Color.white);
 
@@ -55,7 +61,7 @@ public class DoctorView extends JFrame {
 
         userPanel.add(nombreDoc, restricciones);
 
-        JLabel especialidadDoc = new JLabel(String.valueOf(doctorData.get("Especialidad")));
+        JLabel especialidadDoc = new JLabel(String.valueOf(datosDoctor.get("Especialidad")));
         especialidadDoc.setFont(new Font("Arial", Font.PLAIN, 13));
         especialidadDoc.setForeground(Color.white);
 
@@ -70,6 +76,8 @@ public class DoctorView extends JFrame {
         headerPanel.add(nombreHospital, BorderLayout.WEST);
         this.add(headerPanel, BorderLayout.NORTH);
         this.add(componenteMenuLateral(), BorderLayout.WEST);
+        this.add(PacienteView.panelPaciente(pacienteList));
+
         this.setVisible(true);
 
     }
@@ -87,11 +95,11 @@ public class DoctorView extends JFrame {
         restricciones.gridx = 0;
 
 
-        menu.add(crearBoton("Opción 1"), restricciones);
-        menu.add(crearBoton("Opción 2"), restricciones);
-        menu.add(crearBoton("Opción 3"), restricciones);
-        menu.add(crearBoton("Opción 4"), restricciones);
-        menu.add(crearBoton("Opción 5"), restricciones);
+        menu.add(crearBoton("Consulta Del Día"), restricciones);
+        menu.add(crearBoton("Salas"), restricciones);
+        menu.add(crearBoton("Farmacía"), restricciones);
+        menu.add(crearBoton("Pacientes Registrados"), restricciones);
+        menu.add(crearBoton("Citar en otra Area"), restricciones);
 
         panelMenu.add(menu);
         return panelMenu;
@@ -106,6 +114,4 @@ public class DoctorView extends JFrame {
 
         return boton;
     }
-
-
-    }
+}
