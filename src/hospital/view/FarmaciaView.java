@@ -1,38 +1,47 @@
 package hospital.view;
 
-import hospital.model.Medicamento; // Asegúrate de que el modelo Medicamento esté disponible
-import hospital.Service.DataFarmacia; // Asegúrate de importar el servicio que devuelve los medicamentos
+import hospital.model.Medicamento;
+import hospital.model.Paciente;
+import hospital.Service.DataFarmacia;
+import hospital.Service.DataPacientes;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class FarmaciaView {
-    public JPanel crearPanelFarmacia() {
-        JPanel panelFarmacia = new JPanel(new BorderLayout());
-        panelFarmacia.setBackground(Color.white);
 
-        List<Medicamento> listaMedicamentos = DataFarmacia.listaMedicamentos(); // Método para obtener la lista de medicamentos
-        String[] columnNames = {"Nombre", "Forma Farmacéutica", "Dosis", "Principio Activo", "Fecha de Caducidad", "Número de Lote", "Precio", "Indicaciones", "Contraindicaciones"};
+    public static JPanel panelPaciente(ArrayList<Medicamento> medicamentos){
 
-        String[][] data = new String[listaMedicamentos.size()][columnNames.length];
-
-        for (int i = 0; i < listaMedicamentos.size(); i++) {
-            Medicamento medicamento = listaMedicamentos.get(i);
-            data[i][0] = medicamento.getNombre();
-            data[i][1] = medicamento.getFormaFarmaceutica();
-            data[i][2] = medicamento.getDosis();
-            data[i][3] = medicamento.getPrincipioActivo();
-            data[i][4] = medicamento.getNumeroLote();
-            data[i][5] = String.valueOf(medicamento.getPrecio());
-            data[i][6] = medicamento.getIndicaciones();
-            data[i][7] = medicamento.getContraindicaciones();
+        JPanel pPanel = new JPanel();
+        pPanel.setLayout(new GridLayout(47, 4));
+        pPanel.setBorder(new EmptyBorder(25,30,0,10));
+        pPanel.setBackground(Color.WHITE);
+        JLabel [] campos = {new JLabel(""), new JLabel(), new JLabel(), new JLabel()};
+        campos[0].setFont(new Font("Nimbus Sans", Font.BOLD, 22));
+        for (JLabel campo : campos) {
+            pPanel.add(campo);
         }
 
-        JTable table = new JTable(data, columnNames);
-        JScrollPane scrollPane = new JScrollPane(table);
-        panelFarmacia.add(scrollPane, BorderLayout.CENTER);
+        String [] campos2 = {"NOMBRE","MEDICINA","DOSIS","PRECIO"};
+        for (String campo2 : campos2) {
+            pPanel.add(new JLabel(campo2));
+        }
 
-        return panelFarmacia;
+        ArrayList<Medicamento> listaPacientes = DataFarmacia.listaMedicamentos();
+
+        for (Medicamento infoPaciente : listaPacientes) {
+            pPanel.add(new JLabel(infoPaciente.getNombre()));
+            pPanel.add(new JLabel(infoPaciente.getFormaFarmaceutica()));
+            pPanel.add(new JLabel(infoPaciente.getDosis()));
+            pPanel.add(new JLabel(infoPaciente.getNumeroLote()));
+        }
+        return pPanel;
     }
+
+
 }

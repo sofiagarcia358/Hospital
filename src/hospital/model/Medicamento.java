@@ -15,10 +15,17 @@ public class Medicamento {
     private String indicaciones;
     private String contraindicaciones;
 
-    public Medicamento(String paracetamol, String tableta, String s, String paracetamol1, LocalDate of, String l001, double v, String paraElDolorLeve, String s1) {
+    public Medicamento(String nombre, String formaFarmaceutica, String dosis, String principioActivo, LocalDate fechaCaducidad, String numeroLote, double precio, String indicaciones, String contraindicaciones) {
+        this.nombre = nombre;
+        this.formaFarmaceutica = formaFarmaceutica;
+        this.dosis = dosis;
+        this.principioActivo = principioActivo;
+        this.fechaCaducidad = fechaCaducidad;
+        this.numeroLote = numeroLote;
+        this.precio = precio;
+        this.indicaciones = indicaciones;
+        this.contraindicaciones = contraindicaciones;
     }
-
-    // Métodos de encapsulamiento (Getters y Setters)
 
     public String getNombre() {
         return nombre;

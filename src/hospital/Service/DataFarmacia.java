@@ -4,6 +4,7 @@ import hospital.model.DoctorGeneral;
 import hospital.model.Medicamento;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class DataFarmacia {
     public static ArrayList listaMedicamentos() {

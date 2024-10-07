@@ -17,6 +17,7 @@ import java.util.List;
 public class DoctorView extends JFrame {
     private int[] pantalla = {1300, 800};
     private ArrayList<Paciente> pacienteList = DataPacientes.listaPacientes();
+    private ArrayList<Medicamento>  llm = DataFarmacia.listaMedicamentos();
     private HashMap<String, String> datosDoctor;
     private JPanel panelCentral; // Panel para mostrar el contenido dinámico
     private CardLayout cardLayout; // Para cambiar entre el panel de pacientes, salas y farmacia
@@ -91,11 +92,10 @@ public class DoctorView extends JFrame {
         // Panel de salas
         List<Sala> salas = DataSalas.listaSalas();
         SalasView salasView = new SalasView();
-        JPanel panelSalas = salasView.crearPanelGrid(salas);
+        JPanel panelSalas = salasView.panelSala(salas);
 
         // Panel de farmacia
-        FarmaciaView farmaciaView = new FarmaciaView(); // Instanciar la vista de farmacia
-        JPanel panelFarmacia = farmaciaView.crearPanelFarmacia(); // Crear el panel de farmacia
+        JPanel panelFarmacia = FarmaciaView.panelPaciente(llm);
 
         // Añadir todos los paneles al panel central
         panelCentral.add(panelPacientes, "Pacientes");
