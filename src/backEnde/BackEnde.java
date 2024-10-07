@@ -18,8 +18,8 @@ public class BackEnde {
                 if (infDoc.getContrasenna().equalsIgnoreCase(password)) {
 
                     HashMap<String, String> datosDoctor = new HashMap<>();
-                    datosDoctor.put("nombre doctor", infDoc.getNombre());
-                    datosDoctor.put("especialidad", infDoc.getCargo());
+                    datosDoctor.put("Nombre", infDoc.getNombre());
+                    datosDoctor.put("Especialidad", infDoc.getCargo());
                     datosDoctor.put("password", infDoc.getContrasenna());
                     datosDoctor.put("email", infDoc.getCorreo());
                     datosDoctor.put("usuario", infDoc.getUser());

@@ -11,9 +11,12 @@
   <component name="ChangeListManager">
     <list default="true" id="1080fcc2-f862-44de-8eaa-9bae50b93dc8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/backEnde/BackEnde.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backEnde/BackEnde.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hospital/model/DoctorGeneral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hospital/model/DoctorGeneral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hospital/Service/DataFarmacia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hospital/Service/DataFarmacia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hospital/model/Medicamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hospital/model/Medicamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hospital/view/DoctorView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hospital/view/DoctorView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hospital/view/FarmaciaView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hospital/view/FarmaciaView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hospital/view/SalasView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hospital/view/SalasView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +55,7 @@
     &quot;Application.PacienteView.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;salasView&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;farmacia&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/sofia/IdeaProjects/Hospital/src/hospital/Service/bdDoctores.java&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,

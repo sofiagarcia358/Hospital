@@ -2,8 +2,10 @@ package hospital.view;
 
 import hospital.model.Paciente;
 import hospital.model.Sala;
+import hospital.model.Medicamento; // Asegúrate de importar Medicamento
 import hospital.Service.DataPacientes;
 import hospital.Service.DataSalas;
+import hospital.Service.DataFarmacia;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -15,9 +17,10 @@ import java.util.List;
 public class DoctorView extends JFrame {
     private int[] pantalla = {1300, 800};
     private ArrayList<Paciente> pacienteList = DataPacientes.listaPacientes();
+    private ArrayList<Medicamento>  llm = DataFarmacia.listaMedicamentos();
     private HashMap<String, String> datosDoctor;
     private JPanel panelCentral; // Panel para mostrar el contenido dinámico
-    private CardLayout cardLayout; // Para cambiar entre el panel de pacientes y el panel de salas
+    private CardLayout cardLayout; // Para cambiar entre el panel de pacientes, salas y farmacia
 
     public DoctorView(HashMap<String, String> datosDoctor) {
         this.datosDoctor = datosDoctor;
@@ -28,6 +31,7 @@ public class DoctorView extends JFrame {
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
 
+        // Configurar el encabezado
         JPanel headerPanel = new JPanel(new BorderLayout());
         headerPanel.setPreferredSize(new Dimension(1300, 60));
         headerPanel.setBackground(Color.darkGray);
@@ -86,13 +90,17 @@ public class DoctorView extends JFrame {
         JPanel panelPacientes = PacienteView.panelPaciente(pacienteList);
 
         // Panel de salas
-        List<Sala> salas = DataSalas.listaSalas(); // Suponiendo que DataSalas.listaSalas() devuelve una lista de salas
+        List<Sala> salas = DataSalas.listaSalas();
         SalasView salasView = new SalasView();
-        JPanel panelSalas = salasView.crearPanelGrid(salas);
+        JPanel panelSalas = salasView.panelSala(salas);
 
-        // Añadir ambos paneles al panel central
+        // Panel de farmacia
+        JPanel panelFarmacia = FarmaciaView.panelPaciente(llm);
+
+        // Añadir todos los paneles al panel central
         panelCentral.add(panelPacientes, "Pacientes");
         panelCentral.add(panelSalas, "Salas");
+        panelCentral.add(panelFarmacia, "Farmacia"); // Añadir el panel de farmacia
 
         // Añadir el panel central a la ventana
         this.add(panelCentral, BorderLayout.CENTER);
@@ -104,7 +112,6 @@ public class DoctorView extends JFrame {
     }
 
     private JPanel componenteMenuLateral() {
-
         JPanel panelMenu = new JPanel();
         panelMenu.setPreferredSize(new Dimension(250, pantalla[1]));
         panelMenu.setBackground(Color.darkGray);
@@ -115,9 +122,10 @@ public class DoctorView extends JFrame {
         restricciones.fill = GridBagConstraints.HORIZONTAL;
         restricciones.gridx = 0;
 
+        // Añadir botones al menú
         menu.add(crearBoton("Consulta Del Día"), restricciones);
-        menu.add(crearBotonSalas("Salas"), restricciones); // Cambiar este botón para mostrar el panel de salas
-        menu.add(crearBoton("Farmacía"), restricciones);
+        menu.add(crearBotonSalas("Salas"), restricciones);
+        menu.add(crearBotonFarmacia("Farmacia"), restricciones); // Cambiar este botón para mostrar el panel de farmacia
         menu.add(crearBoton("Pacientes Registrados"), restricciones);
         menu.add(crearBoton("Citar en otra Area"), restricciones);
 
@@ -133,11 +141,19 @@ public class DoctorView extends JFrame {
         return boton;
     }
 
-    // Nuevo botón para alternar a las salas
     private JButton crearBotonSalas(String texto) {
         JButton boton = new JButton(texto);
         boton.addActionListener(e -> {
             cardLayout.show(panelCentral, "Salas"); // Muestra el panel de salas
+        });
+        return boton;
+    }
+
+    // Nuevo botón para alternar a la farmacia
+    private JButton crearBotonFarmacia(String texto) {
+        JButton boton = new JButton(texto);
+        boton.addActionListener(e -> {
+            cardLayout.show(panelCentral, "Farmacia"); // Muestra el panel de farmacia
         });
         return boton;
     }
